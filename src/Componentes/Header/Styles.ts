@@ -6,8 +6,8 @@ export const HeaderContainer = styled.div`
   height: 18.5rem;
   width: 100%;
 
-  z-index:1;
-  position: relative;
+ background-color: aquamarine;
+
   img{
     width: 100%;
     background-size: cover;

@@ -1,10 +1,14 @@
 import { RegularText } from "../../Typography/Typography";
-import { ProfileContainer } from "./styles";
-
+import { ProfileContainer, ProfileContent } from "./styles";
+import ProfilePic from '../../assets/profileIcon.jfif'
 export function Profile() {
     return (
         <ProfileContainer>
-              <RegularText color="subtitle" size="l">Profile</RegularText>
+          <ProfileContent>
+            <img src={ProfilePic} alt="" />
+            
+          </ProfileContent>
+            
         </ProfileContainer>
       
     )
