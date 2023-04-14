@@ -11,5 +11,6 @@ export const HeaderContainer = styled.div`
   img{
     width: 100%;
     background-size: cover;
+  
   }
 `;
