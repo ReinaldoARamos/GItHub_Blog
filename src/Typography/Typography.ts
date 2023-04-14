@@ -20,7 +20,7 @@ export const TitleText = styled.h1<TitleTextProps>`
     font-weight: bold;
 ` 
 
-export const Regular = styled.p<RegularTextProps>`
+export const RegularText = styled.p<RegularTextProps>`
     color: ${({theme, color}) => theme.colors[`base-${color ?? "text"}`]};
     font-size: ${({theme, size}) => theme.textSizes[`text-regular-${size ?? "l"}`]};
     font-family: ${({theme}) => theme.fonts.title};
