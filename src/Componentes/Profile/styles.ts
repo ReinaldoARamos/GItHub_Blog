@@ -5,8 +5,7 @@ export const ProfileContainer = styled.div`
   height: 13.25rem;
   display: flex;
   align-items: center;
-
-
+  justify-content: space-between;
   border-radius: 10px;
 
   left: 288px;
@@ -21,8 +20,14 @@ export const ProfileContainer = styled.div`
 
 export const ProfileContent = styled.div`
 width: 100%;
-background-color: red;
-display: flex;
-align-items: center;
-justify-content: space-around;
+flex-direction: column;
+padding-bottom: 4rem;
+margin-left: 2rem;
+
+ 
 `;
+
+
+export const ProfileFooter = styled.footer`
+
+`

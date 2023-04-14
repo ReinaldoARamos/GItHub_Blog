@@ -18,9 +18,9 @@ export const defaultTheme = {
     "title-title-l": "1.5rem",
     "title-title-m": "1.25rem",
     "title-title-s": "1.125rem",
-    "text-regular-l": "0.75rem",
-    "text-regular-m": "0.875rem",
-    "text-regular-s": "0.75rem",
+    "text-regular-l": "1.125rem",
+    "text-regular-m": "1rem",
+    "text-regular-s": "0.875rem",
 
   },
   fonts: {
