@@ -13,4 +13,19 @@ export const defaultTheme = {
     "base-input": "#040F1A",
     "base-blue": "#3294F8"
   },
+
+  textSizes:{
+    "title-title-l": "1.5rem",
+    "title-title-m": "1.25rem",
+    "title-title-s": "1.125rem",
+    "text-regular-l": "0.75rem",
+    "text-regular-m": "0.875rem",
+    "text-regular-s": "0.75rem",
+
+  },
+  fonts: {
+    regular: "'Nunito'",
+    title: "'Nunito'",
+  },
+
 };
