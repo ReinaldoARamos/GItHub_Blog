@@ -29,5 +29,8 @@ margin-left: 2rem;
 
 
 export const ProfileFooter = styled.footer`
+width: 393px;
+height: 26px;
+
 
 `
