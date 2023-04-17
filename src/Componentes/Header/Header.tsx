@@ -6,7 +6,7 @@ export function Header() {
     
     return(
         <HeaderContainer>
-                
+                <img src={cover}></img>
 
         </HeaderContainer>
       

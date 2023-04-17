@@ -1,6 +1,7 @@
 //import { RegularText, TitleText } from "../../../Typography/Typography";
 import { Avatar } from "../../../Componentes/Avatar";
 import { ExternalLinks } from "../../../Componentes/ExternalLinks";
+import { RegularText } from "../../../Typography/Typography";
 import { ProfileContainer, ProfileContent } from "./styles";
 
 export function Profile() {
@@ -14,6 +15,7 @@ export function Profile() {
             <ExternalLinks text={"github"} />
           </a>
         </header>
+          <RegularText color="text"size="m">Atualmente estudando para me tornar um desensolvedor front end</RegularText>
       </ProfileContent>
     </ProfileContainer>
   );
