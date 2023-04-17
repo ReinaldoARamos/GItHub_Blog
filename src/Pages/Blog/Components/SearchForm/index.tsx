@@ -1,9 +1,18 @@
+import { RegularText, TitleText } from "../../../../Typography/Typography";
 import { SearchContainer } from "./style";
 
 export function SearchInput() {
     return (
         <SearchContainer>
-            Teste
+           <header>
+            <TitleText size="s">
+                
+                Publicações
+                <RegularText size="s" color="subtitle">6 publicações</RegularText>
+                </TitleText>
+                
+           </header>
+        <input placeholder="Busque uma publicação" type="text"/>
         </SearchContainer>
     )
 }
