@@ -1,8 +1,8 @@
 //import { RegularText, TitleText } from "../../../Typography/Typography";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Avatar } from "../../../Componentes/Avatar";
-import { ExternalLinks } from "../../../Componentes/ExternalLinks";
-import { RegularText } from "../../../Typography/Typography";
+import { Avatar } from "../../../../Componentes/Avatar";
+import { ExternalLinks } from "../../../../Componentes/ExternalLinks";
+import { RegularText } from "../../../../Typography/Typography";
 import { ProfileContainer, ProfileContent } from "./styles";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faBuilding, faUserGroup } from "@fortawesome/free-solid-svg-icons";
