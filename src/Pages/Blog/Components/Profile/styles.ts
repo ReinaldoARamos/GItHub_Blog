@@ -7,25 +7,13 @@ export const ProfileContainer = styled.div`
   margin-top: 1000px;
   border-radius: 10px;
   box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
-
   margin-top: -5.5rem;
-  
-
   width: 54rem;
   background: ${({ theme }) => theme.colors["base-profile"]};
+ margin-left: 288px;
 `;
 
-/*
-width: 100%;
-  min-height: 13.25rem;
-  margin-top: -5.5rem;
-  background: ${({ theme }) => theme.colors["base-profile"]};
-  box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  padding: 2rem 2.5rem;
-  display: flex;
-  gap: 2rem;
-* */
+
 
 export const ProfileContent = styled.div`
   flex: 1;
