@@ -1,5 +1,5 @@
-import { RegularText, TitleText } from "../../Typography/Typography";
-import { Avatar } from "../Avatar";
+//import { RegularText, TitleText } from "../../../Typography/Typography";
+import { Avatar } from "../../../Componentes/Avatar";
 import { ProfileContainer, ProfileContent } from "./styles";
 
 export function Profile() {
@@ -9,7 +9,7 @@ export function Profile() {
       <ProfileContent>
         <header>
           <h1>Reinaldo Ramos</h1>
-          GITHUB
+        
         </header>
       </ProfileContent>
     </ProfileContainer>
