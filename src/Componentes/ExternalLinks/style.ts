@@ -19,6 +19,7 @@ border-bottom: 1px solid transparent;
 height: 19px;
 line-height: 19px;
 
+
 svg{
     width: 0.75rem;
     height: 0.75rem;
@@ -34,4 +35,5 @@ ${({ variant }) =>
     css`
       flex-direction: row-reverse;
     `}
+    
 `

@@ -37,6 +37,9 @@ export const ProfileContent = styled.div`
     line-height: 130%;
  
   }
+  a{
+        text-decoration: none;
+    }
 `;
 
 /*
