@@ -6,7 +6,7 @@ export const ProfileContainer = styled.div`
   display: flex;
   margin-top: 1000px;
   border-radius: 10px;
- 
+
   left: 288px;
   top: 208px;
   margin-top: -15rem;
@@ -28,24 +28,34 @@ export const ProfileContent = styled.div`
     margin-bottom: 0.5rem;
     margin-right: 32px;
     color: ${({ theme }) => theme.colors["base-blue"]};
-    
   }
 
   h1 {
     font-size: ${({ theme }) => theme.textSizes["title-title-l"]};
     color: ${({ theme }) => theme.colors["base-title"]};
     line-height: 130%;
- 
   }
-  a{
-        text-decoration: none;
-    }
+  a {
+    text-decoration: none;
+  }
 
-    ol{
-      list-style-type: none;
-      display: flex;
-      margin-top: 24px;
+  ol {
+    width: 393px;
+    list-style-type: none;
+    display: flex;
+    margin-top: 24px;
+    gap: 8px;
+
+    justify-content: space-between;
+
+    svg {
+      text-align: center;
+
+      width: 1.125rem;
+      height: 1.125rem;
+      color: ${({ theme }) => theme.colors["base-label"]};
     }
+  }
 `;
 
 /*

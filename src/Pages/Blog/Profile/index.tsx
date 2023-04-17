@@ -19,7 +19,7 @@ export function Profile() {
           </a>
         </header>
         <RegularText color="text" size="m">
-          I'm studying to become a front-end developer with focus on react💻 ⚛️
+          I'm studying to become a front-end developer with focus on reac
           I'm always learning and trying to be better day by day
         </RegularText>
 
