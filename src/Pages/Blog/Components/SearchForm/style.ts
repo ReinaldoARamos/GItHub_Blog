@@ -2,7 +2,8 @@ import styled  from "styled-components";
 
 
 export const SearchContainer = styled.div`
-width: 864px;
-height: 91px;
+
+margin-top: 72px;
+
 background-color: red;
 ` 

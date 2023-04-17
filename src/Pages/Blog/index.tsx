@@ -4,9 +4,10 @@ import { SearchInput } from "./Components/SearchForm";
 
 export function Blog() {
     return ( 
-        <>
+       <>
         
         <Profile/>
+        
         <SearchInput />
      </>
     )
