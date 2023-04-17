@@ -10,6 +10,21 @@ export const PostContainer = styled.div`
   padding: 2rem;
   transition: 0.4s;
   margin-left: 293px;
-
+  display: flex;
+  flex-direction: column;
   
+  h1{
+   
+    width: 283px;
+   
+  }
+  header{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .Content{
+    margin-top: 20px;
+  }
 `
