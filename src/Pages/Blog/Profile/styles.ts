@@ -40,6 +40,12 @@ export const ProfileContent = styled.div`
   a{
         text-decoration: none;
     }
+
+    ol{
+      list-style-type: none;
+      display: flex;
+      margin-top: 24px;
+    }
 `;
 
 /*

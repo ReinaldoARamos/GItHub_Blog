@@ -1,8 +1,11 @@
 //import { RegularText, TitleText } from "../../../Typography/Typography";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Avatar } from "../../../Componentes/Avatar";
 import { ExternalLinks } from "../../../Componentes/ExternalLinks";
 import { RegularText } from "../../../Typography/Typography";
 import { ProfileContainer, ProfileContent } from "./styles";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faBuilding, faUserGroup } from "@fortawesome/free-solid-svg-icons";
 
 export function Profile() {
   return (
@@ -15,7 +18,31 @@ export function Profile() {
             <ExternalLinks text={"github"} />
           </a>
         </header>
-          <RegularText color="text"size="m">Atualmente estudando para me tornar um desensolvedor front end</RegularText>
+        <RegularText color="text" size="m">
+          I'm studying to become a front-end developer with focus on react💻 ⚛️
+          I'm always learning and trying to be better day by day
+        </RegularText>
+
+        <ol>
+          <li>
+            <RegularText size="s">
+              {" "}
+              <FontAwesomeIcon icon={faGithub} /> Reinaldo Ramos
+            </RegularText>
+          </li>
+          <li>
+            <RegularText size="s">
+              {" "}
+              <FontAwesomeIcon icon={faBuilding} /> Mundial Mix
+            </RegularText>
+          </li>
+          <li>
+            <RegularText size="s">
+              {" "}
+              <FontAwesomeIcon icon={faUserGroup} /> 4 followers
+            </RegularText>
+          </li>
+        </ol>
       </ProfileContent>
     </ProfileContainer>
   );
