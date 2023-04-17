@@ -6,7 +6,7 @@ export const ProfileContainer = styled.div`
   display: flex;
   margin-top: 1000px;
   border-radius: 10px;
-
+ 
   left: 288px;
   top: 208px;
   margin-top: -15rem;
@@ -20,18 +20,22 @@ export const ProfileContent = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  
+  margin-top: 40px;
   header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 0.5rem;
+    margin-right: 32px;
+    color: ${({ theme }) => theme.colors["base-blue"]};
+    
   }
 
   h1 {
     font-size: ${({ theme }) => theme.textSizes["title-title-l"]};
     color: ${({ theme }) => theme.colors["base-title"]};
     line-height: 130%;
+ 
   }
 `;
 
