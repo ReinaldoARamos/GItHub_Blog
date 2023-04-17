@@ -3,12 +3,10 @@ import styled from "styled-components";
 export const SearchContainer = styled.div`
   margin-top: 72px;
   display: flex;
-
   width: 864px;
   height: 70px;
   margin-left: 288px;
-  padding: 12px, 16px, 12px, 16px;
-
+  color: ${({theme}) => theme.colors["base-span"]};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,6 +15,7 @@ export const SearchContainer = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
+
   }
 
   input {
@@ -27,6 +26,10 @@ export const SearchContainer = styled.div`
     border: ${({theme}) => theme.colors["base-border"]}; 
     border-radius: 8px;
     font-size:  ${({theme}) => theme.textSizes["text-regular-s"]};
-    padding: 12px 16px 12px 16px
+    padding: 12px 16px 12px 16px;
+    color: ${({theme}) => theme.colors["base-title"]}; ;
+    
   }
+
+ 
 `;

@@ -8,7 +8,7 @@ export function SearchInput() {
             <TitleText size="s">
                 
                 Publicações
-                <RegularText size="s" color="subtitle">6 publicações</RegularText>
+                <RegularText size="s" >6 publicações</RegularText>
                 </TitleText>
                 
            </header>
