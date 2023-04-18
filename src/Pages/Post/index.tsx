@@ -4,9 +4,11 @@ import { RegularText, TitleText } from "../../Typography/Typography";
 import { PostCardContainer, PostCardContent } from "./style";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faBuilding, faUserGroup, faCalendar, faComment} from "@fortawesome/free-solid-svg-icons";
+import { PostContent } from "./Components/PostContent";
 
 export function Post() {
     return (
+      <>
         <PostCardContainer>
             <PostCardContent>
             <header>
@@ -38,8 +40,12 @@ export function Post() {
             </RegularText>
           </li>
         </ol>
+
+
             </PostCardContent>
-          
+
         </PostCardContainer>
+        <PostContent />
+        </>
     )
 }
