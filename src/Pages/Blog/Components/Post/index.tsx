@@ -1,14 +1,23 @@
+import { useCallback, useEffect, useState } from "react";
+import { IPosts } from "../..";
 import { RegularText, TitleText } from "../../../../Typography/Typography";
 import { PostContainer } from "./style";
+import { DateFormatter, relativeDateFormatter } from "../../../../utils/dateFormatter";
 
 
 
-export function Post() {
+interface Posts {
+  posts: IPosts;
+}
+export function Post({posts} : Posts) {
+
+  const formattedDate = relativeDateFormatter(posts.created_at);
+
   return (
     <PostContainer>
       <header>
         <TitleText>JavaScript data types and data structures</TitleText>
-        <RegularText size="s">Há 1 dia</RegularText>
+        <RegularText size="s">{formattedDate}</RegularText>
       </header>
 
       <RegularText color="text" size="m" className="Content">

@@ -1,13 +1,15 @@
+import { useCallback, useEffect, useState } from "react";
 import { Header } from "../../Componentes/Header/Header";
 import { Post } from "./Components/Post";
 import { PostContainer } from "./Components/Post/style";
 import { Profile } from "./Components/Profile";
 import { SearchInput } from "./Components/SearchForm";
 import { PostsListContainer } from "./style";
+import { api } from "../../lib/axios";
 
 
 
-export interface Posts {
+export interface IPosts {
    title: string;
    body: string;
    created_at: string;
@@ -17,11 +19,23 @@ export interface Posts {
    user: {
      login: string;
    };
- }
+ } 
 
 export function Blog() {
 
   
+   const [posts, setPosts] = useState<IPosts>([]);
+
+   const getPost =  useCallback(async () => {
+       const response = await api.get('/repos/ReinaldoARamos/GItHub_Blog/issues/1');
+       setPosts(response.data);
+       console.log("Teste" + response.data)
+   }, [posts])
+ 
+   useEffect(() => {
+     getPost()
+   },[]);
+
     return ( 
        <>
         
@@ -31,8 +45,8 @@ export function Blog() {
    
        
         <PostsListContainer>
-           <Post />
-           <Post />
+           <Post  key={posts.number} posts={posts}/>
+          
          
          
         </PostsListContainer>
