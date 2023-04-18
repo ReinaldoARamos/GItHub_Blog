@@ -1,6 +1,6 @@
 import { RegularText } from "../../../../Typography/Typography";
 import { PostCard, PostContentContainer } from "./style";
-
+import code from "../../../../../public/code.png"
 export function PostContent() {
   return (
     <PostContentContainer>
@@ -26,6 +26,8 @@ export function PostContent() {
             all types:
           </RegularText>
         </div>
+        <img src={code} />
+        
       </PostCard>
     </PostContentContainer>
   );

@@ -4,6 +4,7 @@ export const PostContentContainer = styled.div`
   width: 864px;
   height: 422px;
   margin-left: 288px;
+  margin-bottom: 128px;
 `;
 
 export const PostCard = styled.section`
@@ -31,5 +32,7 @@ export const PostCard = styled.section`
       margin-top: 3px;
       margin-bottom: 24px;
     }
+
+    
   }
 `;
