@@ -17,7 +17,8 @@ interface User {
   login: String,
     followers: String,
     company: String,
-    bio: String
+    bio: String,
+    avatar_url: string
 } 
 export function Profile() {
 
@@ -37,7 +38,7 @@ export function Profile() {
 
   return (
     <ProfileContainer>
-      <img src={ProfilePic} />
+      <img src={profileData.avatar_url} />
       <ProfileContent>
         <header>
           <h1>{profileData.login}</h1>
