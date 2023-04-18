@@ -6,11 +6,12 @@ import { RegularText } from "../../../../Typography/Typography";
 import { ProfileContainer, ProfileContent } from "./styles";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faBuilding, faUserGroup } from "@fortawesome/free-solid-svg-icons";
+import ProfilePic from '../../../../assets/profileIcon.jfif'
 
 export function Profile() {
   return (
     <ProfileContainer>
-      <Avatar />
+      <img src={ProfilePic} />
       <ProfileContent>
         <header>
           <h1>Reinaldo Ramos</h1>

@@ -11,6 +11,16 @@ export const ProfileContainer = styled.div`
   width: 54rem;
   background: ${({ theme }) => theme.colors["base-profile"]};
  margin-left: 288px;
+
+ img{ 
+      width: 148px;
+  height: 148px;
+  border-radius: 8px;
+  margin-left: 40px;
+  display: flex;
+  margin-top: 32px;
+  margin-right: 32px;
+    }
 `;
 
 
@@ -54,6 +64,8 @@ export const ProfileContent = styled.div`
       height: 1.125rem;
       color: ${({ theme }) => theme.colors["base-label"]};
     }
+
+   
   }
 `;
 
