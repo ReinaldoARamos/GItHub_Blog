@@ -10,9 +10,10 @@ type ExternaLinksProps = ComponentProps<typeof ExternaLinksContainer> & {
 
 export function ExternalLinks({ text, icon, ...rest }: ExternaLinksProps) {
   return (
-    <ExternaLinksContainer>
+    <ExternaLinksContainer {...rest}>
       {text}
       {icon ?? <FontAwesomeIcon icon={faUpRightFromSquare} />}
+   
     </ExternaLinksContainer>
   );
 }
