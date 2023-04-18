@@ -19,6 +19,9 @@ border-bottom: 1px solid transparent;
 height: 19px;
 line-height: 19px;
 
+a{
+    text-decoration: none;
+}
 
 svg{
     width: 0.75rem;
@@ -29,6 +32,8 @@ svg{
     border-color: ${({theme}) => theme.colors["base-blue"]};
     cursor: pointer;
 }
+
+
 
 ${({ variant }) =>
     variant === "iconLeft" &&
