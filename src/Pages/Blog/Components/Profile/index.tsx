@@ -1,12 +1,12 @@
 //import { RegularText, TitleText } from "../../../Typography/Typography";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Avatar } from "../../../../Componentes/Avatar";
 import { ExternalLinks } from "../../../../Componentes/ExternalLinks";
 import { RegularText } from "../../../../Typography/Typography";
 import { ProfileContainer, ProfileContent } from "./styles";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faBuilding, faUserGroup } from "@fortawesome/free-solid-svg-icons";
 import ProfilePic from '../../../../assets/profileIcon.jfif'
+import { NavLink } from "react-router-dom";
 
 export function Profile() {
   return (
@@ -15,9 +15,13 @@ export function Profile() {
       <ProfileContent>
         <header>
           <h1>Reinaldo Ramos</h1>
-          <a href="https://github.com/ReinaldoARamos" target="_blank">
+         
+            <NavLink  to={"/post"}>
             <ExternalLinks text={"github"} />
-          </a>
+            </NavLink>
+            
+      
+      
         </header>
         <RegularText color="text" size="m">
           I'm studying to become a front-end developer with focus on reac

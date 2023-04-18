@@ -11,6 +11,7 @@ import {
   faAngleLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { PostContent } from "./Components/PostContent";
+import { NavLink } from "react-router-dom";
 
 export function Post() {
   return (
@@ -18,13 +19,18 @@ export function Post() {
       <PostCardContainer>
         <PostCardContent>
           <header>
-            <ExternalLinks
+         
+         <NavLink to={"/"}>
+         <ExternalLinks
               icon={<FontAwesomeIcon icon={faAngleLeft} />}
               text="Voltar"
               variant="iconLeft"
             >
               {" "}
             </ExternalLinks>
+           
+         </NavLink>
+          
             <a
               href="https://github.com/ReinaldoARamos/GItHub_Blog"
               target="_blank"
