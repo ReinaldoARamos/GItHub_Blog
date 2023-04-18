@@ -9,13 +9,15 @@ import ProfilePic from '../../../../assets/profileIcon.jfif'
 import { NavLink } from "react-router-dom";
 import { useCallback, useEffect, useState } from "react";
 import { api } from "../../../../lib/axios";
+
 //const username = import.meta.env.VITE_GITHUB_USERNAME;
 
 
 interface User {
   login: String,
     followers: String,
-    company: String
+    company: String,
+    bio: String
 } 
 export function Profile() {
 
@@ -48,27 +50,26 @@ export function Profile() {
       
         </header>
         <RegularText color="text" size="m">
-          I'm studying to become a front-end developer with focus on reac
-          I'm always learning and trying to be better day by day
+        {profileData.bio}
         </RegularText>
 
         <ol>
           <li>
             <RegularText size="s">
               {" "}
-              <FontAwesomeIcon icon={faGithub} /> Reinaldo Ramos
+              <FontAwesomeIcon icon={faGithub} /> {profileData.login}
             </RegularText>
           </li>
           <li>
             <RegularText size="s">
               {" "}
-              <FontAwesomeIcon icon={faBuilding} /> Mundial Mix
+              <FontAwesomeIcon icon={faBuilding} /> {profileData.company}
             </RegularText>
           </li>
           <li>
             <RegularText size="s">
               {" "}
-              <FontAwesomeIcon icon={faUserGroup} /> 4 followers
+              <FontAwesomeIcon icon={faUserGroup} /> {profileData.followers} followers
             </RegularText>
           </li>
         </ol>
