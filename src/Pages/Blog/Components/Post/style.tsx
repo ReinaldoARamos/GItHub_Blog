@@ -12,7 +12,8 @@ export const PostContainer = styled.div`
   margin-left: 293px;
   display: flex;
   flex-direction: column;
-  
+  transition: 0.4s;
+  outline: 0; 
   h1{
    
     width: 283px;
@@ -24,6 +25,10 @@ export const PostContainer = styled.div`
     justify-content: space-between;
   }
 
+  &:hover{
+    cursor: pointer;
+    border: 1px solid ${({theme}) => theme.colors["base-blue"]};
+  }
   .Content{
     margin-top: 20px;
   }

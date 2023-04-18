@@ -43,7 +43,7 @@ export function Profile() {
         <header>
           <h1>{profileData.login}</h1>
          
-            <NavLink  to={"/post"}>
+            <NavLink  to={"https://github.com/ReinaldoARamos/GItHub_Blog"}>
             <ExternalLinks text={"github"} />
             </NavLink>
             
