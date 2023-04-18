@@ -18,7 +18,7 @@ export interface Posts {
      login: string;
    };
  }
- 
+
 export function Blog() {
 
   
@@ -31,8 +31,6 @@ export function Blog() {
    
        
         <PostsListContainer>
-           <Post />
-           <Post />
            <Post />
            <Post />
          

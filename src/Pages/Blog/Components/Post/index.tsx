@@ -2,11 +2,7 @@ import { RegularText, TitleText } from "../../../../Typography/Typography";
 import { PostContainer } from "./style";
 
 
-interface IPost{
-  body: string,
-  number: number,
-  created_at: string
-}
+
 export function Post() {
   return (
     <PostContainer>
