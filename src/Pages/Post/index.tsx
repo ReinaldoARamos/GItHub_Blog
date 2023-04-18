@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ExternalLinks } from "../../Componentes/ExternalLinks";
 import { RegularText, TitleText } from "../../Typography/Typography";
-import { PostCardContainer, PostCardContent } from "./Components/style";
+import { PostCardContainer, PostCardContent } from "./style";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faBuilding, faUserGroup, faCalendar, faComment} from "@fortawesome/free-solid-svg-icons";
 
