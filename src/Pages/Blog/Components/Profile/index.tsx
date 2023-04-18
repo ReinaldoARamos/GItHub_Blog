@@ -8,7 +8,16 @@ import { faBuilding, faUserGroup } from "@fortawesome/free-solid-svg-icons";
 import ProfilePic from '../../../../assets/profileIcon.jfif'
 import { NavLink } from "react-router-dom";
 
+
+interface User {
+    username: String,
+    followers: String,
+    company: String
+} 
 export function Profile() {
+
+
+
   return (
     <ProfileContainer>
       <img src={ProfilePic} />
