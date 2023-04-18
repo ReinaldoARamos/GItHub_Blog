@@ -20,4 +20,16 @@ export const PostCard = styled.section`
     color: ${({ theme }) => theme.colors["base-text"]};
     font-weight: 700;
   }
+
+  h3 {
+    color: ${({ theme }) => theme.colors["base-blue"]};
+    margin-top: 40px;
+  }
+
+  div {
+    p {
+      margin-top: 3px;
+      margin-bottom: 24px;
+    }
+  }
 `;
