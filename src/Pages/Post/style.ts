@@ -43,5 +43,13 @@ export const PostCardContent = styled.div`
       color: ${({ theme }) => theme.colors["base-label"]};
     }
   }
+
+  header{ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 40px;
+    padding-bottom: 20px
+  }
 `
 
