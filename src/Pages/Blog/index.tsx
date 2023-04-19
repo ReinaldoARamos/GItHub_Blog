@@ -28,13 +28,19 @@ export function Blog() {
 
    const getPost =  useCallback(async (query: string = "") => {
 
-      try{
-        const response = await api.get('/repos/ReinaldoARamos/GItHub_Blog/issues/1');
-        setPosts(response.data);
-        console.log("Teste" + response.data)
-      }
- 
-   }, [posts])
+    try{
+      const response = await api.get('/repos/ReinaldoARamos/GItHub_Blog/issues/1');
+      setPosts(response.data);
+      console.log("Teste" + response.data)
+    
+    } finally{
+      console.log("asdasd")
+    }   
+      
+
+   } ,
+
+   [posts])
  
    useEffect(() => {
      getPost()

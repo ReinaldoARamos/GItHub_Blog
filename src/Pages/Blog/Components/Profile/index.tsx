@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 import { useCallback, useEffect, useState } from "react";
 import { api } from "../../../../lib/axios";
 
-//const username = import.meta.env.VITE_GITHUB_USERNAME;
+const username = import.meta.env.VITE_GITHUB_USERNAME;
 
 
 interface User {
@@ -25,7 +25,7 @@ export function Profile() {
   const [profileData, setProfileData] = useState<User>({} as User)
 
   const getProfileData = useCallback(async () => {
-    const response =  await api.get('users/ReinaldoARamos')
+    const response =  await api.get(`users/${username}`)
 
     setProfileData(response.data)
 
