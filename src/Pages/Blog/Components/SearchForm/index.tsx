@@ -19,7 +19,9 @@ type SearchFormInputs = z.infer<typeof SearchFormSchema>
 
 
 
-  
+  interface SearchProps {
+    getPosts: (query?: string) => Promise<void>;
+  }
 export function SearchInput() {
 
     const {register, handleSubmit, reset} = useForm<SearchFormInputs>({
@@ -30,10 +32,10 @@ const {getPost } = useContext(BlogContext)
     
   async function handleSearch(data : SearchFormInputs) {
     await getPost(data.query)
-    reset();
+
   }
     return (
-        <SearchContainer onChange={handleSubmit(handleSearch)}  >
+        <SearchContainer   >
            <header>
             <TitleText size="s">
                 
@@ -42,7 +44,8 @@ const {getPost } = useContext(BlogContext)
                 </TitleText>
                 
            </header>
-        <input placeholder="Busque uma publicação"  type="text" {...register('query')} />
+        <input placeholder="Busque uma publicação"  type="text" {...register('query') } />
+       <button type="submit" onClick={handleSubmit(handleSearch)}>Teste</button>
         </SearchContainer>
     )
 }

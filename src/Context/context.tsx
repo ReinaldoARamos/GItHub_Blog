@@ -6,6 +6,7 @@ import {
   useState,
 } from "react";
 import { api } from "../lib/axios";
+import { useForm } from "react-hook-form";
 
 const username = import.meta.env.VITE_GITHUB_USERNAME;
 const reponame = import.meta.env.VITE_GITHUB_REPONAME;
@@ -35,19 +36,21 @@ export const BlogContext = createContext({} as ContextProps);
 
 export function BlogProvider({ children }: BlogProviderProps) {
   const [posts, setPosts] = useState<IPosts[]>([]);
-
+  const {reset} = useForm()
   const getPost = useCallback(
     async (query: string = "") => {
       try {
         const response = await api.get(
           `/search/issues?q=${query}%20repo:${username}/${reponame}`
         );
-
+   
         setPosts(response.data.items);
-        console.log("Teste" + response.data);
         
+        console.log(query);
+    
       } finally {
-        console.log("asdasd");
+       console.log("teste")
+       
       }
     },
 
