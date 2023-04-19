@@ -7,8 +7,8 @@ import { SearchInput } from "./Components/SearchForm";
 import { PostsListContainer } from "./style";
 import { api } from "../../lib/axios";
 
-
-// <Post  key={posts.number} posts={posts}/>
+const username = import.meta.env.VITE_GITHUB_USERNAME;
+const reponame = import.meta.env.VITE_GITHUB_REPONAME;
 export interface IPosts {
    title: string;
    body: string;
@@ -24,13 +24,14 @@ export interface IPosts {
 export function Blog() {
 
   
-   const [posts, setPosts] = useState<IPosts>([]);
+   const [posts, setPosts] = useState<IPosts[]>([]);
 
    const getPost =  useCallback(async (query: string = "") => {
 
     try{
-      const response = await api.get('/repos/ReinaldoARamos/GItHub_Blog/issues/1');
-      setPosts(response.data);
+      const response = await api.get(`/search/issues?q=${query}%20repo:${username}/${reponame}`);
+
+      setPosts(response.data.items);
       console.log("Teste" + response.data)
     
     } finally{
@@ -56,7 +57,9 @@ export function Blog() {
        
         <PostsListContainer>
           
-         <Post key={posts.number} posts={posts} /> 
+       {posts.map((post) => (
+        <Post posts={post} key={post.number} />
+       ))}
          
         </PostsListContainer>
 
