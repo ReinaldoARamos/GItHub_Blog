@@ -4,6 +4,16 @@ import * as z from 'zod'
 import {zodResolver} from '@hookform/resolvers/zod'
 import {useForm} from 'react-hook-form'
 
+
+const SearchFormSchema = z.object({
+    query: z.string(),
+})
+
+type SearchFormInputs = z.infer<typeof SearchFormSchema>
+
+
+
+  
 export function SearchInput() {
     return (
         <SearchContainer>
