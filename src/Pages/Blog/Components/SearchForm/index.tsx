@@ -21,17 +21,18 @@ export function SearchInput() {
   const { register, handleSubmit, reset } = useForm<SearchFormInputs>({
     resolver: zodResolver(SearchFormSchema),
   });
-  const { getPost } = useContext(BlogContext);
+  const { getPost, posts } = useContext(BlogContext);
 
   async function handleSearch(data: SearchFormInputs) {
     await getPost(data.query);
+[]
   }
   return (
     <SearchContainer>
       <header>
         <TitleText size="s">
           Publicações
-          <RegularText size="s">6 publicações</RegularText>
+          <RegularText size="s">{posts.length} publicações</RegularText>
         </TitleText>
       </header>
       <div className="Teste">
