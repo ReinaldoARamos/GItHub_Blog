@@ -24,10 +24,12 @@ export interface IPosts {
 
 interface ContextProps {
   posts: IPosts[];
+  FetchSearch: (query: string) => Promise<void>;
 }
 
 interface BlogProviderProps {
   children: ReactNode;
+ 
 }
 export const BlogContext = createContext({} as ContextProps);
 
@@ -53,12 +55,34 @@ export function BlogProvider({ children }: BlogProviderProps) {
 
   useEffect(() => {
     getPost();
+   
   }, []);
+
+
+  
+  const FetchSearch = useCallback(
+    async (query : string) => {
+      try{
+        const response = await api.get(
+          `/search/issues?q=${query}%20repo:${username}/${reponame}`, {
+          params: {
+            q: query
+          }
+        })
+
+        setPosts(response.data.items);
+      } finally{
+        console.log("teste")
+      }
+     
+       
+    }
+  , [])
 
 
   return (
     <BlogContext.Provider
-      value={{ posts}}
+      value={{ posts, FetchSearch }}
     >
       {children}
     </BlogContext.Provider>
