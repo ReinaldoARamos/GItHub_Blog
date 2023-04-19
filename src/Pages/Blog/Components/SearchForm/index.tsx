@@ -3,8 +3,12 @@ import { SearchContainer } from "./style";
 import * as z from 'zod'
 import {zodResolver} from '@hookform/resolvers/zod'
 import {useForm} from 'react-hook-form'
+import { useCallback } from "react";
+import { api } from "../../../../lib/axios";
 
 
+const username = import.meta.env.VITE_GITHUB_USERNAME;
+const reponame = import.meta.env.VITE_GITHUB_REPONAME;
 const SearchFormSchema = z.object({
     query: z.string(),
 })
@@ -12,11 +16,20 @@ const SearchFormSchema = z.object({
 type SearchFormInputs = z.infer<typeof SearchFormSchema>
 
 
-const {register, handleSubmit, formState} = useForm<SearchFormInputs>({
-    resolver: zodResolver(SearchFormSchema)
-})
+
   
 export function SearchInput() {
+
+    const {register, formState, handleSubmit} = useForm<SearchFormInputs>({
+        resolver: zodResolver(SearchFormSchema)
+    })
+
+    
+const FetchSearch = useCallback(
+    async (query : string) => {
+        const response = await api.get(`/search/issues?q=${query}%20repo:${username}/${reponame});`)
+    }
+ , [])
     return (
         <SearchContainer>
            <header>
@@ -27,7 +40,7 @@ export function SearchInput() {
                 </TitleText>
                 
            </header>
-        <input placeholder="Busque uma publicação" type="text"/>
+        <input placeholder="Busque uma publicação" type="text" {...register('query') }  />
         </SearchContainer>
     )
 }
