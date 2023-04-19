@@ -1,5 +1,8 @@
 import { RegularText, TitleText } from "../../../../Typography/Typography";
 import { SearchContainer } from "./style";
+import * as z from 'zod'
+import {zodResolver} from '@hookform/resolvers/zod'
+import {useForm} from 'react-hook-form'
 
 export function SearchInput() {
     return (
