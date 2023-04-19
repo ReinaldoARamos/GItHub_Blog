@@ -18,7 +18,10 @@ export const SearchContainer = styled.div`
 
   }
 
+.Teste{
+  
   input {
+    width: 100%;
     display: flex;
     height: 50px;
     color: ${({theme}) => theme.colors["base-label"]};
@@ -30,6 +33,26 @@ export const SearchContainer = styled.div`
     color: ${({theme}) => theme.colors["base-title"]}; ;
     
   }
-
+  button{ 
+    width: 9rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: 0.4s;
+    color: ${({theme}) => theme.colors["base-text"]};
+    background: ${({theme}) => theme.colors["base-profile"]};
+    border: transparent;
+    svg{
+      color: ${({theme}) => theme.colors["base-text"]};
+    }
+  }
+  
+  display: flex;
+  gap: 1rem;
+  height: 50px;
  
+}
+  
 `;
