@@ -31,5 +31,8 @@ export const PostContainer = styled.div`
   }
   .Content{
     margin-top: 20px;
+
+    height: 100px;
+    overflow: hidden;
   }
 `

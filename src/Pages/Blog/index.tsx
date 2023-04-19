@@ -8,7 +8,7 @@ import { PostsListContainer } from "./style";
 import { api } from "../../lib/axios";
 
 
-
+// <Post  key={posts.number} posts={posts}/>
 export interface IPosts {
    title: string;
    body: string;
@@ -26,10 +26,14 @@ export function Blog() {
   
    const [posts, setPosts] = useState<IPosts>([]);
 
-   const getPost =  useCallback(async () => {
-       const response = await api.get('/repos/ReinaldoARamos/GItHub_Blog/issues/1');
-       setPosts(response.data);
-       console.log("Teste" + response.data)
+   const getPost =  useCallback(async (query: string = "") => {
+
+      try{
+        const response = await api.get('/repos/ReinaldoARamos/GItHub_Blog/issues/1');
+        setPosts(response.data);
+        console.log("Teste" + response.data)
+      }
+ 
    }, [posts])
  
    useEffect(() => {
@@ -45,9 +49,8 @@ export function Blog() {
    
        
         <PostsListContainer>
-           <Post  key={posts.number} posts={posts}/>
           
-         
+         <Post key={posts.number} posts={posts} /> 
          
         </PostsListContainer>
 

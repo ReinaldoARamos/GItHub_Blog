@@ -29,7 +29,7 @@ export function Profile() {
 
     setProfileData(response.data)
 
-    console.log(response.data)
+ 
   }, [profileData])
 
   useEffect(() =>{
