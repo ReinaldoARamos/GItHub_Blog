@@ -7,11 +7,13 @@ import { useCallback } from "react";
 import { api } from "../../../../lib/axios";
 
 
+
 const username = import.meta.env.VITE_GITHUB_USERNAME;
 const reponame = import.meta.env.VITE_GITHUB_REPONAME;
 const SearchFormSchema = z.object({
     query: z.string(),
 })
+
 
 type SearchFormInputs = z.infer<typeof SearchFormSchema>
 
@@ -20,16 +22,20 @@ type SearchFormInputs = z.infer<typeof SearchFormSchema>
   
 export function SearchInput() {
 
-    const {register, formState, handleSubmit} = useForm<SearchFormInputs>({
+    const {register, handleSubmit} = useForm<SearchFormInputs>({
         resolver: zodResolver(SearchFormSchema)
     })
 
+
     
-const FetchSearch = useCallback(
-    async (query : string) => {
-        const response = await api.get(`/search/issues?q=${query}%20repo:${username}/${reponame});`)
-    }
- , [])
+    const FetchSearch = useCallback(
+        async (query : string) => {
+            const response = await api.get(`/search/issues?q=${query}%20repo:${username}/${reponame});`)
+            return query
+        }
+      , [])
+    
+      
     return (
         <SearchContainer>
            <header>

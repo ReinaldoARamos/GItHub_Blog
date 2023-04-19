@@ -47,12 +47,13 @@ export function Blog() {
      getPost()
    },[]);
 
+ 
     return ( 
        <>
         
         <Profile/>
         
-        <SearchInput />
+        <SearchInput  />
    
        
         <PostsListContainer>
