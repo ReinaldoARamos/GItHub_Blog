@@ -22,17 +22,18 @@ type SearchFormInputs = z.infer<typeof SearchFormSchema>
   
 export function SearchInput() {
 
-    const {register, handleSubmit} = useForm<SearchFormInputs>({
+    const {register, handleSubmit, reset} = useForm<SearchFormInputs>({
         resolver: zodResolver(SearchFormSchema)
     })
-const {FetchSearch } = useContext(BlogContext)
+const {getPost } = useContext(BlogContext)
 
     
   async function handleSearch(data : SearchFormInputs) {
-    await FetchSearch(data.query)
+    await getPost(data.query)
+    reset();
   }
     return (
-        <SearchContainer>
+        <SearchContainer onChange={handleSubmit(handleSearch)}  >
            <header>
             <TitleText size="s">
                 
@@ -41,7 +42,7 @@ const {FetchSearch } = useContext(BlogContext)
                 </TitleText>
                 
            </header>
-        <input placeholder="Busque uma publicação"  type="text" {...register('query')} onChange={handleSubmit(handleSearch)}  />
+        <input placeholder="Busque uma publicação"  type="text" {...register('query')} />
         </SearchContainer>
     )
 }

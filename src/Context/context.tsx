@@ -24,7 +24,7 @@ export interface IPosts {
 
 interface ContextProps {
   posts: IPosts[];
-  FetchSearch: (query: string) => Promise<void>;
+  getPost: (query: string) => Promise<void>;
 }
 
 interface BlogProviderProps {
@@ -45,6 +45,7 @@ export function BlogProvider({ children }: BlogProviderProps) {
 
         setPosts(response.data.items);
         console.log("Teste" + response.data);
+        
       } finally {
         console.log("asdasd");
       }
@@ -60,11 +61,12 @@ export function BlogProvider({ children }: BlogProviderProps) {
 
 
   
+
+  /*
   const FetchSearch = useCallback(
-    async (query : string) => {
+    async (query : string = "") => {
       try{
-        const response = await api.get(
-          `/search/issues?q=${query}%20repo:${username}/${reponame}`, {
+        const response = await api.get(`/search/issues?q=${query}%20repo:${username}/${reponame}`, {
           params: {
             q: query
           }
@@ -78,11 +80,11 @@ export function BlogProvider({ children }: BlogProviderProps) {
        
     }
   , [])
-
+*/
 
   return (
     <BlogContext.Provider
-      value={{ posts, FetchSearch }}
+      value={{ posts, getPost }}
     >
       {children}
     </BlogContext.Provider>
