@@ -12,25 +12,41 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { PostContent } from "./Components/PostContent";
 import { NavLink } from "react-router-dom";
+import { IPosts } from "../../Context/context";
+import { useCallback, useState } from "react";
+import { api } from "../../lib/axios";
+
+const username = import.meta.env.VITE_GITHUB_USERNAME;
+const reponame = import.meta.env.VITE_GITHUB_REPONAME;
 
 export function Post() {
+  const [postDatam, setPostData] = useState<IPosts>({} as IPosts);
+
+  const getPostDetails = useCallback(async () => {
+    try {
+        const response = await api.get(`/repo/${username}/issues/${id}`)
+    } 
+    finally
+     {
+    
+    }
+  }, []);
+
   return (
     <>
       <PostCardContainer>
         <PostCardContent>
           <header>
-         
-         <NavLink to={"/"}>
-         <ExternalLinks
-              icon={<FontAwesomeIcon icon={faAngleLeft} />}
-              text="Voltar"
-              variant="iconLeft"
-            >
-              {" "}
-            </ExternalLinks>
-           
-         </NavLink>
-          
+            <NavLink to={"/"}>
+              <ExternalLinks
+                icon={<FontAwesomeIcon icon={faAngleLeft} />}
+                text="Voltar"
+                variant="iconLeft"
+              >
+                {" "}
+              </ExternalLinks>
+            </NavLink>
+
             <a
               href="https://github.com/ReinaldoARamos/GItHub_Blog"
               target="_blank"
@@ -61,7 +77,6 @@ export function Post() {
           </ol>
         </PostCardContent>
       </PostCardContainer>
-      <PostContent />
     </>
   );
 }
