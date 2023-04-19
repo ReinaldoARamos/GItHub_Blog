@@ -47,6 +47,11 @@ export const SearchContainer = styled.div`
     svg{
       color: ${({theme}) => theme.colors["base-text"]};
     }
+
+    &:hover{
+       background: ${({theme}) => theme.colors["gray-900"]};
+       cursor: pointer;
+    }
   }
   
   display: flex;
