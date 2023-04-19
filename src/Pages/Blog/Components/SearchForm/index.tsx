@@ -25,7 +25,7 @@ export function SearchInput() {
 
   async function handleSearch(data: SearchFormInputs) {
     await getPost(data.query);
-[]
+    [];
   }
   return (
     <SearchContainer>
