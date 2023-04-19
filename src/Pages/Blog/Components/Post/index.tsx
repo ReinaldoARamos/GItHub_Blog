@@ -16,7 +16,10 @@ export function Post({posts} : Posts) {
   return (
     <PostContainer>
       <header>
-        <TitleText>{posts.title}</TitleText>
+        <p>
+        <TitleText className="title" >{posts.title}</TitleText>
+        </p>
+        
         <RegularText size="s">{formattedDate}</RegularText>
       </header>
 

@@ -35,4 +35,5 @@ export const PostContainer = styled.div`
     height: 100px;
     overflow: hidden;
   }
+
 `
