@@ -1,5 +1,6 @@
-import { createContext } from "react";
+import { useContext } from "react";
+import { BlogContext } from "../Context/context";
 
-
-
-export const BlogContext = createContext
+export function UseBlog() {
+    const {posts} = useContext(BlogContext)
+}
