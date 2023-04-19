@@ -12,7 +12,9 @@ const SearchFormSchema = z.object({
 type SearchFormInputs = z.infer<typeof SearchFormSchema>
 
 
-
+const {register, handleSubmit, formState} = useForm<SearchFormInputs>({
+    resolver: zodResolver(SearchFormSchema)
+})
   
 export function SearchInput() {
     return (
