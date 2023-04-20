@@ -16,9 +16,18 @@ p{
         color: ${({theme}) => theme.colors["base-text"]};
 }
 
-em{
-    background-color:  ${({theme}) => theme.colors["base-profile"]};
-}
+
+code {
+        font-family: "FiraCode", monospace !important;
+        line-height: 160% !important;
+        
+      }
+
+      pre{ 
+        background-color:  ${({theme}) => theme.colors["base-profile"]};
+      }
+
+
 `;
 
 
