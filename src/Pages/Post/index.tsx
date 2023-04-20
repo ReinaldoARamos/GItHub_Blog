@@ -92,8 +92,13 @@ export function Post() {
               </li>
             </ol>
           </PostCardContent>
+
+         
         </>
+
+        
       )}
     </PostCardContainer>
+    
   );
 }
