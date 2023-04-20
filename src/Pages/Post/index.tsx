@@ -15,22 +15,26 @@ import { NavLink, useParams } from "react-router-dom";
 import { BlogContext, BlogProvider, IPosts } from "../../Context/context";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { api } from "../../lib/axios";
+import { Spinner } from "phosphor-react";
 
 const username = import.meta.env.VITE_GITHUB_USERNAME;
 const reponame = import.meta.env.VITE_GITHUB_REPONAME;
 
 export function Post() {
   const [postData, setPostData] = useState<IPosts>({} as IPosts);
+  const [isLoading, SetLoading] = useState(true);
   const { id } = useParams();
 
   const getPostDetails = useCallback(async () => {
     try {
+      SetLoading(true);
       const response = await api.get(
-        `/repos/${username}/${reponame}/issues/1`
+        `/repos/${username}/${reponame}/issues/${id}`
       );
       setPostData(response.data);
-      console.log(response.data)
+      console.log(response.data);
     } finally {
+      SetLoading(false);
     }
   }, [postData]);
 
@@ -38,58 +42,57 @@ export function Post() {
     getPostDetails;
   }, [postData]);
 
-
-  
-
-  
   useEffect(() => {
     getPostDetails();
   }, []);
-  return (
-    <>
-      <PostCardContainer>
-        <PostCardContent>
-          <header>
-            <NavLink to={"/"}>
-              <ExternalLinks
-                icon={<FontAwesomeIcon icon={faAngleLeft} />}
-                text="Voltar"
-                variant="iconLeft"
-              >
-                {" "}
-              </ExternalLinks>
-            </NavLink>
 
-            <a
-              href={postData.html_url}
-              target="_blank"
-            >
-              <ExternalLinks text={"ver no github"} />
-            </a>
-          </header>
-          <TitleText> {postData.title} </TitleText>
-          <ol>
-            <li>
-              <RegularText size="s">
-                {" "}
-                <FontAwesomeIcon icon={faGithub} /> {postData.user.login}
-              </RegularText>
-            </li>
-            <li>
-              <RegularText size="s">
-                {" "}
-                <FontAwesomeIcon icon={faCalendar} /> Há 1 dia
-              </RegularText>
-            </li>
-            <li>
-              <RegularText size="s">
-                {" "}
-                <FontAwesomeIcon icon={faComment} /> {postData.comments} comentários
-              </RegularText>
-            </li>
-          </ol>
-        </PostCardContent>
-      </PostCardContainer>
-    </>
+  return (
+    <PostCardContainer>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          <PostCardContent>
+            <header>
+              <NavLink to={"/"}>
+                <ExternalLinks
+                  icon={<FontAwesomeIcon icon={faAngleLeft} />}
+                  text="Voltar"
+                  variant="iconLeft"
+                >
+                  {" "}
+                </ExternalLinks>
+              </NavLink>
+
+              <a href={postData.html_url} target="_blank">
+                <ExternalLinks text={"ver no github"} />
+              </a>
+            </header>
+            <TitleText> {postData.title} </TitleText>
+            <ol>
+              <li>
+                <RegularText size="s">
+                  {" "}
+                  <FontAwesomeIcon icon={faGithub} /> {postData.user.login}
+                </RegularText>
+              </li>
+              <li>
+                <RegularText size="s">
+                  {" "}
+                  <FontAwesomeIcon icon={faCalendar} /> Há 1 dia
+                </RegularText>
+              </li>
+              <li>
+                <RegularText size="s">
+                  {" "}
+                  <FontAwesomeIcon icon={faComment} /> {postData.comments}{" "}
+                  comentários
+                </RegularText>
+              </li>
+            </ol>
+          </PostCardContent>
+        </>
+      )}
+    </PostCardContainer>
   );
 }
