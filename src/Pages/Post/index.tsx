@@ -11,27 +11,40 @@ import {
   faAngleLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { PostContent } from "./Components/PostContent";
-import { NavLink } from "react-router-dom";
-import { IPosts } from "../../Context/context";
-import { useCallback, useState } from "react";
+import { NavLink, useParams } from "react-router-dom";
+import { BlogContext, BlogProvider, IPosts } from "../../Context/context";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { api } from "../../lib/axios";
 
 const username = import.meta.env.VITE_GITHUB_USERNAME;
 const reponame = import.meta.env.VITE_GITHUB_REPONAME;
 
 export function Post() {
-  const [postDatam, setPostData] = useState<IPosts>({} as IPosts);
+  const [postData, setPostData] = useState<IPosts>({} as IPosts);
+  const { id } = useParams();
 
   const getPostDetails = useCallback(async () => {
     try {
-        const response = await api.get(`/repo/${username}/issues/${id}`)
-    } 
-    finally
-     {
-    
+      const response = await api.get(
+        `/repos/${username}/${reponame}/issues/1`
+      );
+      setPostData(response.data);
+      console.log(response.data)
+    } finally {
     }
-  }, []);
+  }, [postData]);
 
+  useEffect(() => {
+    getPostDetails;
+  }, [postData]);
+
+
+  
+
+  
+  useEffect(() => {
+    getPostDetails();
+  }, []);
   return (
     <>
       <PostCardContainer>
@@ -54,12 +67,12 @@ export function Post() {
               <ExternalLinks text={"ver no github"} />
             </a>
           </header>
-          <TitleText>JavaScript data types and data structures </TitleText>
+          <TitleText> {postData.title} </TitleText>
           <ol>
             <li>
               <RegularText size="s">
                 {" "}
-                <FontAwesomeIcon icon={faGithub} /> Reinaldo Ramos
+                <FontAwesomeIcon icon={faGithub} /> rasojd
               </RegularText>
             </li>
             <li>
