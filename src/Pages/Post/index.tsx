@@ -61,7 +61,7 @@ export function Post() {
             </NavLink>
 
             <a
-              href="https://github.com/ReinaldoARamos/GItHub_Blog"
+              href="#"
               target="_blank"
             >
               <ExternalLinks text={"ver no github"} />
