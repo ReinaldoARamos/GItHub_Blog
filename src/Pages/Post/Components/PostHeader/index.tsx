@@ -13,36 +13,12 @@ import { api } from "../../../../lib/axios";
 import { IPosts } from "../../../../Context/context";
 
 
-const username = import.meta.env.VITE_GITHUB_USERNAME;
-const reponame = import.meta.env.VITE_GITHUB_REPONAME;
-
-export function PostHeader() {
-
-
-  const [postData, setPostData] = useState<IPosts>({} as IPosts);
-  const [isLoading, SetLoading] = useState(true);
-  const { id } = useParams();
+interface PostHeaderPRops{ 
+  isLoading: boolean,
+  postData: IPosts 
+}
+export function PostHeader({isLoading, postData} : PostHeaderPRops) {
   const formattedDate = relativeDateFormatter(postData.created_at);
-  const getPostDetails = useCallback(async () => {
-    try {
-      SetLoading(true);
-      const response = await api.get(
-        `/repos/${username}/${reponame}/issues/${id}`
-      );
-      setPostData(response.data);
-      console.log(response.data);
-    } finally {
-      SetLoading(false);
-    }
-  }, [postData]);
-
-  useEffect(() => {
-    getPostDetails;
-  }, [postData]);
-
-  useEffect(() => {
-    getPostDetails();
-  }, []);
     return( 
         <PostCardContainer>
 
