@@ -1,13 +1,14 @@
 import { PostContentContainer } from "./style";
+import ReactMarkdown from 'react-markdown';
 
 interface PostContentProps {
-  content: string
+  content: string;
 }
 
-export function PostContent({content} : PostContentProps) {
+export function PostContent({  content}: PostContentProps) {
   return (
     <PostContentContainer>
-          {content}
+      <ReactMarkdown children={content} ></ReactMarkdown>
     </PostContentContainer>
   );
 }

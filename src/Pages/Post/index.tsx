@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
 import { PostContent } from "./Components/PostContent";
 import { PostHeader } from "./Components/PostHeader";
-import { relativeDateFormatter } from "../../utils/dateFormatter";
 import { IPosts } from "../../Context/context";
 import { useParams } from "react-router-dom";
 import { api } from "../../lib/axios";
+import { ContentContainer } from "./style";
 
 
 const username = import.meta.env.VITE_GITHUB_USERNAME;
@@ -41,8 +41,10 @@ export function Post() {
   return (
     <>
       <PostHeader isLoading={isLoading} postData={postData} />
-      
-      <PostContent content="Teste"/>
+      <ContentContainer>
+      {!isLoading && <PostContent content={postData.body} /> }
+      </ContentContainer>
+     
     </>
   );
 }
