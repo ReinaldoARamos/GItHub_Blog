@@ -8,6 +8,7 @@ import {
 import { api } from "../lib/axios";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
+import { relativeDateFormatter } from "../utils/dateFormatter";
 
 const username = import.meta.env.VITE_GITHUB_USERNAME;
 const reponame = import.meta.env.VITE_GITHUB_REPONAME;
@@ -67,6 +68,9 @@ export function BlogProvider({ children }: BlogProviderProps) {
 
 
   
+
+
+
   return (
     <BlogContext.Provider
       value={{ posts, getPost}}
