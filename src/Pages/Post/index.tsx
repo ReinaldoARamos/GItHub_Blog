@@ -72,7 +72,7 @@ export function Post() {
             <li>
               <RegularText size="s">
                 {" "}
-                <FontAwesomeIcon icon={faGithub} /> rasojd
+                <FontAwesomeIcon icon={faGithub} /> {postData.user.login}
               </RegularText>
             </li>
             <li>
@@ -84,7 +84,7 @@ export function Post() {
             <li>
               <RegularText size="s">
                 {" "}
-                <FontAwesomeIcon icon={faComment} /> 5 comentários
+                <FontAwesomeIcon icon={faComment} /> {postData.comments} comentários
               </RegularText>
             </li>
           </ol>

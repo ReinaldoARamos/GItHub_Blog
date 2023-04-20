@@ -2,6 +2,7 @@ import { RegularText, TitleText } from "../../../../Typography/Typography";
 import { PostContainer } from "./style";
 import { relativeDateFormatter } from "../../../../utils/dateFormatter";
 import { IPosts } from "../../../../Context/context";
+import { NavLink } from "react-router-dom";
 
 interface Posts {
   posts: IPosts;
@@ -11,6 +12,7 @@ export function Post({ posts }: Posts) {
 
   return (
     <PostContainer>
+      <NavLink to={`/post/${posts.number}`}>
       <header>
         <p>
           <TitleText className="title">{posts.title}</TitleText>
@@ -22,6 +24,8 @@ export function Post({ posts }: Posts) {
       <RegularText color="text" size="m" className="Content">
         {posts.body}
       </RegularText>
+      </NavLink>
     </PostContainer>
+   
   );
 }
