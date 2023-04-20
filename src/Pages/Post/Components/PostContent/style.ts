@@ -16,18 +16,23 @@ p{
         color: ${({theme}) => theme.colors["base-text"]};
 }
 
-
-code {
+ul {
+    list-style: inherit;
+    padding-left: 1.5rem;
+  }
+  pre {
+    background: ${({ theme }) => theme.colors["base-post"]};
+    padding: 1rem;
+    > div {
+      background: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      code {
         font-family: "FiraCode", monospace !important;
         line-height: 160% !important;
-        
       }
-
-      pre{ 
-        background-color:  ${({theme}) => theme.colors["base-profile"]};
-      }
-
-
+    }
+    }
 `;
 
 
