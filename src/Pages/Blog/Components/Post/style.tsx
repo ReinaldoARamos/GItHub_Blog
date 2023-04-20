@@ -15,6 +15,7 @@ export const PostContainer = styled.div`
   transition: 0.4s;
   outline: 0; 
   border: 1px solid transparent;
+ 
   h1{
    
     width: 283px;
@@ -37,4 +38,7 @@ export const PostContainer = styled.div`
     overflow: hidden;
   }
 
+.link{
+  text-decoration: none;
+}
 `

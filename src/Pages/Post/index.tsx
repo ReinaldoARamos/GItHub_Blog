@@ -16,6 +16,7 @@ import { BlogContext, BlogProvider, IPosts } from "../../Context/context";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { api } from "../../lib/axios";
 import { Spinner } from "phosphor-react";
+import { relativeDateFormatter } from "../../utils/dateFormatter";
 
 const username = import.meta.env.VITE_GITHUB_USERNAME;
 const reponame = import.meta.env.VITE_GITHUB_REPONAME;
@@ -24,7 +25,7 @@ export function Post() {
   const [postData, setPostData] = useState<IPosts>({} as IPosts);
   const [isLoading, SetLoading] = useState(true);
   const { id } = useParams();
-
+  const formattedDate = relativeDateFormatter(postData.created_at);
   const getPostDetails = useCallback(async () => {
     try {
       SetLoading(true);
@@ -79,7 +80,7 @@ export function Post() {
               <li>
                 <RegularText size="s">
                   {" "}
-                  <FontAwesomeIcon icon={faCalendar} /> Há 1 dia
+                  <FontAwesomeIcon icon={faCalendar} /> {formattedDate}
                 </RegularText>
               </li>
               <li>

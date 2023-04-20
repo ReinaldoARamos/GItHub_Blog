@@ -12,7 +12,7 @@ export function Post({ posts }: Posts) {
 
   return (
     <PostContainer>
-      <NavLink to={`/post/${posts.number}`}>
+      <NavLink to={`/post/${posts.number}`} className="link">
       <header>
         <p>
           <TitleText className="title">{posts.title}</TitleText>
