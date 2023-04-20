@@ -1,10 +1,11 @@
+import { PostContent } from "./Components/PostContent";
 import { PostHeader } from "./Components/PostHeader";
 
 export function Post() {
-  
-
   return (
-   
-    <PostHeader />
+    <>
+      <PostHeader />
+      <PostContent content="Teste"/>
+    </>
   );
 }
